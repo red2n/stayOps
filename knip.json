@@ -1,0 +1,18 @@
+{
+  "$schema": "https://unpkg.com/knip@5/schema.json",
+  "ignore": ["packages/api/**", "packages/worker/**"],
+  "workspaces": {
+    "packages/app-builder": {
+      "entry": ["src/app/**/*.ts"],
+      "project": ["tsconfig.app.json"],
+      "ignoreDependencies": [
+        "@angular/compiler",
+        "@angular/forms",
+        "@angular/platform-browser-dynamic"
+      ]
+    },
+    "packages/sdk": {
+      "entry": ["src/**/*.ts"]
+    }
+  }
+}

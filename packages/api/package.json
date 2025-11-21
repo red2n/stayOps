@@ -1,0 +1,11 @@
+{
+  "name": "@flowforge/api",
+  "version": "0.1.0",
+  "private": true,
+  "description": "FlowForge control-plane API",
+  "scripts": {
+    "lint": "biome lint ."
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

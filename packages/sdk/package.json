@@ -1,0 +1,12 @@
+{
+  "name": "@flowforge/sdk",
+  "version": "0.1.0",
+  "private": true,
+  "description": "FlowForge connector SDK",
+  "scripts": {
+    "lint": "biome lint ."
+  },
+  "dependencies": {
+    "zod": "^4.1.12"
+  }
+}
