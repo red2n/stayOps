@@ -1,0 +1,28 @@
+<aside class="palette">
+  <div class="palette__header">
+    <h2>Nodes</h2>
+    <p>Drag a node into the canvas to build your flow.</p>
+  </div>
+
+  <section *ngFor="let group of groups" class="palette__group">
+    <p class="palette__group-title">{{ group.title }}</p>
+    <div class="palette__cards">
+      <article
+        *ngFor="let template of group.templates"
+        class="palette__card"
+        [style.borderColor]="template.accent"
+        draggable="true"
+        (dragstart)="handleDragStart($event, template.id)"
+        (click)="handlePick(template.id)"
+      >
+        <div class="palette__card-icon" [style.color]="template.accent">
+          <span class="material-symbols-rounded">{{ template.icon }}</span>
+        </div>
+        <div>
+          <p class="palette__card-label">{{ template.label }}</p>
+          <p class="palette__card-desc">{{ template.description }}</p>
+        </div>
+      </article>
+    </div>
+  </section>
+</aside>

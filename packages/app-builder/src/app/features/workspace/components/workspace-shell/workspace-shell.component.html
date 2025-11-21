@@ -1,0 +1,29 @@
+<ng-container *ngIf="vm$ | async as vm">
+  <section class="workspace">
+    <app-builder-toolbar
+      (run)="handleRun()"
+      (save)="handleSave()"
+    ></app-builder-toolbar>
+
+    <div class="workspace__body">
+      <app-node-palette
+        class="workspace__panel"
+        [templates]="vm.templates"
+        (templatePicked)="handleTemplatePicked($event)"
+      ></app-node-palette>
+
+      <app-workflow-canvas
+        class="workspace__canvas"
+        [workflow]="vm.workflow"
+        [selectedNodeId]="vm.selectedNode?.id ?? null"
+        (nodeSpawn)="handleNodeSpawn($event)"
+        (nodeSelected)="handleNodeSelected($event)"
+      ></app-workflow-canvas>
+
+      <app-run-inspector
+        class="workspace__panel"
+        [selectedNode]="vm.selectedNode"
+      ></app-run-inspector>
+    </div>
+  </section>
+</ng-container>

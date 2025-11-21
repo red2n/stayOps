@@ -6,8 +6,8 @@
 - [ ] Set up CI scaffolding (lint, type-check, unit tests) via GitHub Actions.
 
 ## 1. Builder UI (No Backend Yet)
-- [ ] Spin up `app-builder` (Angular 18 + TypeScript + SCSS + TailwindCSS).
-- [ ] Integrate an Angular-friendly diagram toolkit (ngx-flowchart / ngx-graph) for drag-and-drop canvas and node handles.
+- [x] Spin up `app-builder` (Angular 18 + TypeScript + SCSS) with SOLID-aligned shell layout.
+- [ ] Integrate an Angular-friendly diagram toolkit (ngx-flowchart / ngx-graph) for drag-and-drop canvas and node handles (custom canvas placeholder in place).
 - [ ] Stub local state using Zustand: in-memory workflows, nodes, edges, run history.
 - [ ] Add node palette, configuration drawer, and JSON view backed by mock data.
 - [ ] Implement serialization/import/export to JSON files for early sharing.

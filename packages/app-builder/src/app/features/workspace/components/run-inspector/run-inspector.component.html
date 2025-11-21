@@ -1,0 +1,15 @@
+<aside class="inspector">
+  <div *ngIf="selectedNode; else placeholder">
+    <h3>{{ selectedNode.label }}</h3>
+    <p class="inspector__meta">Type: {{ selectedNode.type }}</p>
+
+    <section>
+      <p class="inspector__section-title">Configuration</p>
+      <pre>{{ selectedNode.config | json }}</pre>
+    </section>
+  </div>
+
+  <ng-template #placeholder>
+    <p class="inspector__placeholder">Select a node to view details.</p>
+  </ng-template>
+</aside>

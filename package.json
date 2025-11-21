@@ -10,11 +10,13 @@
     "lint": "pnpm lint:packages && pnpm lint:knip",
     "lint:packages": "lerna run lint",
     "lint:knip": "knip",
-    "test": "lerna run test"
+    "test": "lerna run test",
+    "clean:all": "lerna run clean --parallel"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.3.7",
     "knip": "^5.70.1",
-    "lerna": "^7.4.2"
+    "lerna": "^7.4.2",
+    "rimraf": "^6.0.1"
   }
 }

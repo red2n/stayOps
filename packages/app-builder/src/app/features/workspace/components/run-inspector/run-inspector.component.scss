@@ -1,0 +1,42 @@
+.inspector {
+  padding: 1rem;
+  background: rgba(2, 6, 23, 0.85);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid rgba(255, 255, 255, 0.06);
+
+  h3 {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  &__meta {
+    margin: 0.2rem 0 1rem;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.65);
+  }
+
+  &__section-title {
+    margin: 0 0 0.35rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  pre {
+    margin: 0;
+    padding: 0.75rem;
+    border-radius: 0.75rem;
+    background: rgba(15, 23, 42, 0.9);
+    font-size: 0.8rem;
+    overflow: auto;
+  }
+
+  &__placeholder {
+    margin: auto;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.65);
+  }
+}

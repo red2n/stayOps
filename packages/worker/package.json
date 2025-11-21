@@ -4,7 +4,8 @@
   "private": true,
   "description": "FlowForge workflow worker",
   "scripts": {
-    "lint": "biome lint ."
+    "lint": "biome lint .",
+    "clean": "rimraf dist"
   },
   "dependencies": {},
   "devDependencies": {}

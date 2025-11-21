@@ -1,0 +1,48 @@
+<section
+  class="canvas"
+  (dragover)="handleDragOver($event)"
+  (drop)="handleDrop($event)"
+>
+  <div class="canvas__empty" *ngIf="!workflow?.nodes.length">
+    <p>Drop nodes here to start building your workflow.</p>
+  </div>
+
+  <ng-container *ngIf="workflow as wf">
+    <div
+      class="canvas__node"
+      *ngFor="let node of wf.nodes; trackBy: trackNode"
+      [class.canvas__node--selected]="node.id === selectedNodeId"
+      [style.left.px]="node.position.x"
+      [style.top.px]="node.position.y"
+      (click)="selectNode(node.id)"
+    >
+      <p class="canvas__node-type">{{ node.type }}</p>
+      <p class="canvas__node-label">{{ node.label }}</p>
+    </div>
+
+    <svg class="canvas__edges" aria-hidden="true">
+      <defs>
+        <marker
+          id="arrowhead"
+          markerWidth="10"
+          markerHeight="7"
+          refX="0"
+          refY="3.5"
+          orient="auto"
+          fill="rgba(59, 130, 246, 0.7)"
+        >
+          <polygon points="0 0, 10 3.5, 0 7"></polygon>
+        </marker>
+      </defs>
+      <ng-container *ngFor="let edge of wf.edges">
+        <line
+          *ngIf="wf.nodes.find(n => n.id === edge.source) as from"
+          [attr.x1]="from.position.x + 140"
+          [attr.y1]="from.position.y + 40"
+          [attr.x2]="wf.nodes.find(n => n.id === edge.target)?.position.x ?? from.position.x"
+          [attr.y2]="wf.nodes.find(n => n.id === edge.target)?.position.y ?? from.position.y"
+        ></line>
+      </ng-container>
+    </svg>
+  </ng-container>
+</section>

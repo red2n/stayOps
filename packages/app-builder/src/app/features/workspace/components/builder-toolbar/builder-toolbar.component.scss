@@ -1,0 +1,66 @@
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  background: rgba(9, 11, 25, 0.85);
+
+  &__brand {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  &__logo {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0.75rem;
+    background: linear-gradient(135deg, #4f46e5, #0ea5e9);
+    display: grid;
+    place-items: center;
+    font-size: 1.25rem;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  &__subtitle {
+    margin: 0;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  &__actions {
+    display: flex;
+    gap: 0.75rem;
+  }
+}
+
+button {
+  border: none;
+  border-radius: 999px;
+  padding: 0.5rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+
+  &:active {
+    transform: scale(0.97);
+  }
+
+  &.ghost {
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+  }
+
+  &.primary {
+    background: linear-gradient(135deg, #6366f1, #0ea5e9);
+    color: white;
+    box-shadow: 0 10px 30px rgba(79, 70, 229, 0.35);
+  }
+}
